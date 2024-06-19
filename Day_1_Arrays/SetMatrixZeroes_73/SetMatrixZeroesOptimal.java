@@ -1,7 +1,8 @@
+package SetMatrixZeroes_73;
+
 import java.util.Scanner;
 
-class code {
-
+public class SetMatrixZeroesOptimal {
     public static void main(String[] args) {
         /*
          * Approach 3 - Optimising SC further by using constant space
