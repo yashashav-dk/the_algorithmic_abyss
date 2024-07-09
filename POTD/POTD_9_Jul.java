@@ -1,8 +1,9 @@
+package POTD;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class code {
+class POTD_9_Jul {
 
     public static void main(String[] args) {
         /* 
