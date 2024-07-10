@@ -1,9 +1,6 @@
 package POTD;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
-class POTD_9_Jul {
+class AverageWaitingTime_1701 {
 
     public static void main(String[] args) {
         /* 
