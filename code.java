@@ -1,26 +1,42 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Stack;
 
 class code {
 
     public static void main(String[] args) {
-        /* 
-        POTD - 1701. Average Waiting Time
+       /*
+        * POTD 1190. Reverse Substrings Between Each Pair of Parentheses
+        * 
+        * 
         */
-        int[][] customers = {{1,2},{2,5},{4,3}};
-        int arrival_time = 0;
-        int total_wait_time = 0;
-        int chef_time = 0;
-        int prev_wait_time = 0;
-        for (int i = 0; i < customers.length; i++) {
-            arrival_time = Math.max(prev_wait_time, customers[i][0]);
-            chef_time = customers[i][1];
-            prev_wait_time = arrival_time + chef_time;
-            total_wait_time += prev_wait_time - customers[i][0];
+        String s = "(ed(et(oc))el)";
+        Stack <Character> st = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            Character c1 = s.charAt(i);
+            if (c1 == ')') {
+                // append the characters present between the starting braces 
+                ArrayList<Character> aux_list = new ArrayList<>();
+                while (st.peek() != '(') {
+                    Character c2 = st.pop();
+                    aux_list.add(c2);
+                }
+                if (st.peek() == '(') {
+                    st.pop();
+                }
+                for (Character character : aux_list) {
+                    st.push(character);
+                }
+                
+            } else {
+                st.push(c1);
+            }
         }
-        double avg = total_wait_time / customers.length;
-        System.out.println(avg);
+        StringBuilder stringBuilder = new StringBuilder("");
+        for (Character character : st) {
+            stringBuilder.append(character);
+        }
+        System.out.println(stringBuilder);
     }
+
 
 }
