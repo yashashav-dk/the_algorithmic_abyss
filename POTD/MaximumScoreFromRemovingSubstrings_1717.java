@@ -1,6 +1,7 @@
+package POTD;
 import java.util.Stack;
 
-public class code {
+public class MaximumScoreFromRemovingSubstrings_1717 {
 
     /*
      * POTD. 1717. Maximum Score From Removing Substrings
