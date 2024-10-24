@@ -16,6 +16,10 @@ public class code {
         return true;
     }
 
+    public static void printMatrix(int top, int bottom, int left, int right, int[][] matrix) {
+        
+    }
+
     public static void main(String[] args) {
         // Getting back into DSA
         // Part 1: Array Indexing
@@ -149,6 +153,25 @@ public class code {
         
 
         // Q9. Traverse in sprial order from top left to inner element
+        int[][] matrix;
+        matrix = new int[][] {
+            {1, 2, 3, 4},
+            {2, 3, 4, 5},
+            {3, 4, 5, 6},
+            {4, 5, 6, 7}
+        };
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+
+        int top = 0;
+        int bottom = rows - 1;
+        int left = 0;
+        int right = cols - 1;
+
+        printMatrix(top, bottom, left, right, matrix);
+
+        
         
 
         // Q10. Traverse the lower triangle of the matrix
