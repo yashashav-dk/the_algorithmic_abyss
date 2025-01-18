@@ -28,6 +28,15 @@
                 "reveal": "always",
                 "panel": "new"
             }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "find ${workspaceFolder} -name \"*.class\" -type f -delete",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
         }
     ]
 }
