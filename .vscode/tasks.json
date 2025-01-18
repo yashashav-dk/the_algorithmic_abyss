@@ -1,13 +1,32 @@
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "compile and run",
+//             "type": "shell",
+//             "command": "javac ${file} && java ${fileBasenameNoExtension} < input.txt > output.txt",
+//             "group": {
+//                 "kind": "build",
+//                 "isDefault": true
+//             }
+//         }
+//     ]
+// }
+
 {
     "version": "2.0.0",
     "tasks": [
         {
             "label": "compile and run",
             "type": "shell",
-            "command": "javac ${file} && java ${fileBasenameNoExtension} < input.txt > output.txt",
+            "command": "cd ${fileDirname} && javac ${file} && java -cp ${workspaceFolder} $(echo ${file} | sed 's|${workspaceFolder}/||' | sed 's|.java||' | sed 's|/|.|g') < input.txt > output.txt",
             "group": {
                 "kind": "build",
                 "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
             }
         }
     ]
