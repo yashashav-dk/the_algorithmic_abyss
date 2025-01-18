@@ -170,7 +170,7 @@ public class code {
         int rows = matrix.length;
         int cols = matrix[0].length;
 
-        int top = 0;
+        int top = 1;
         int bottom = rows - 1;
         int left = 0;
         int right = cols - 1;
