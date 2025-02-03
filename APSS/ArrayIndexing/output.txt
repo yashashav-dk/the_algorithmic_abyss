@@ -1,1 +1,2 @@
-Prime number found at: 6
+7
+Prime number found at index: 8

@@ -5,7 +5,16 @@ import java.util.Scanner;
 
 
 public class ArrayIndexing_5_Finding_Prime {
-    public static Boolean solution(int n) {
+
+    // algo 1 - approach 1
+          /*
+           * 1. check if it is 1 - return false
+           * 2. check if it is 2 - return true
+           * 3. check if it is even (n % 2 == 0) - return false
+           * 4. Run a loop from 3 as i until n - 1 and check if n % i == 0 - return false
+           * 5. If the code can still be reached then return true
+           */
+    public static Boolean solutionNaive(int n) {
         if (n == 1) return false;
         if (n == 2) return true;
         if (n % 2 == 0) return false;
@@ -18,6 +27,33 @@ public class ArrayIndexing_5_Finding_Prime {
 
         return true;
     }
+
+    // algo 2 - approach 2
+    /*
+     * For the same naive solution - check if iterating until n - 1 is a necessity?
+     * Think about it. Let's take n as 100
+     * then the divisor pairs are as follows - 
+     * 1. 1 * 100
+     * 2. 2 * 50
+     * 3. 4 * 25
+     * 4. 5 * 10
+     * 5. 10 * 10
+     * 
+     * The nature of the divisor pairs are such that one of them is always less than or equal to sqrt(10)
+     * If we cant find small ones then there wont be any big ones
+     */
+    public static boolean solutonSquareRootOptimisation(int n) {
+        if (n == 1) return false;
+        if (n == 2) return true;
+        if (n % 2 == 0) return false;
+        int sqrt = (int)Math.sqrt(n);
+        for(int i = 3; i <= sqrt; i = i + 2){
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+
+    
     public static void main(String[] args) {
         /*
          * 
@@ -51,22 +87,15 @@ public class ArrayIndexing_5_Finding_Prime {
             arr[i] = scan.nextInt();
           }
 
-          // algo
-          /*
-           * 1. check if it is 1 - return false
-           * 2. check if it is 2 - return true
-           * 3. check if it is even (n % 2 == 0) - return false
-           * 4. Run a loop from 3 as i until n - 1 and check if n % i == 0 - return false
-           * 5. If the code can still be reached then return true
-           */
+          
         
         boolean found = false;
         int indexAt = -1;
 
         for (int i = 0; i < arrSize; i++) {
-            found = solution(arr[i]);
+            found = solutonSquareRootOptimisation(arr[i]);
             if (found) {
-                
+                System.out.println(arr[i]);
                 indexAt = i;
                 break;
             }
