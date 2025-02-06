@@ -24,13 +24,20 @@ public class ArrayIndexing_6_Traverse_2D_Matrix {
         }
 
         // row major traversal
-        for(int i = 0; i < rows; i++) {
-            for(int j = 0; j < cols; j++) {
-                System.out.print(matrix[i][j] + " ");
+        // for(int i = 0; i < rows; i++) {
+        //     for(int j = 0; j < cols; j++) {
+        //         System.out.print(matrix[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        // column major traversal
+        for(int i = 0; i < cols; i++) {
+            for(int j = 0; j < rows; j++) {
+                System.out.print(matrix[j][i] + " ");
             }
             System.out.println();
         }
-
-        // column major traversal
+        
     }
 }
