@@ -1,6 +1,5 @@
 package APSS.ArrayIndexing;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArrayIndexing_1_Iterate_Array {
