@@ -1,2 +1,0 @@
-Enter a number to test recursion:
-Testing recursion with number: 12345

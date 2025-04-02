@@ -1,1 +1,0 @@
-Number of digits in 12345 is: 5
