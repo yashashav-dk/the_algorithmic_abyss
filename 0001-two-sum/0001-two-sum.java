@@ -1,20 +1,25 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        /*
-        naive approach n^2 : Use two loops; outer loop to keep track of x and inner loop to keep track of y so that x + y == target
-        faster approach n: build hashmap of the entier nums arr, later look at the equation x + y == target; negate y on both sides -> x == target - y; now iterate y and minus the target to check if x is present in the hashmap
+       /**
+       Approach using hashtable
+       Store the entire row in the table along with it's index
+       check if ele - target is present in the hashtablea for element i + 1
         */
-       Map<Integer, Integer> numMap = new HashMap<>();
-
-        for (int i = 0; i < nums.length; i++) {
-            int complement = target - nums[i];
-            if (numMap.containsKey(complement)) {
-                return new int[] {numMap.get(complement), i};
+       HashMap<Integer, Integer> hm = new HashMap<>();
+       for (int i = 0; i < nums.length; i++) {
+            hm.put(nums[i], i);
+       }
+       int[] res = {0,0};
+       for (int i = 0; i < nums.length; i++) {
+            int diff = target - nums[i];
+            if (hm.get(diff) != null && hm.get(diff) != i) {
+               res[0] = i;
+               res[1] = hm.get(diff);
+               break;
             }
-            numMap.put(nums[i], i);
-        }
-
-        // In case no two numbers add up to the target (though the problem statement assumes exactly one solution)
-        return new int[0];
+       }
+    //    System.out.println(hm);
+    //    System.out.println(res[0] + " " + res[1]);
+    return res;
     }
 }
